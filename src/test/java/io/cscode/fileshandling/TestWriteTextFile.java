@@ -14,7 +14,6 @@ import static org.junit.Assert.assertTrue;
 public class TestWriteTextFile extends UnitTestBase {
 
     private static final String PATH_TO_FILE = "/Users/jc/Documents/cscode-files/sample.txt";
-
     private static final String CONTENT =  "Hello, it's a great day today!";
 
     @Mock(answer = Answers.CALLS_REAL_METHODS)
