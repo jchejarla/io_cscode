@@ -1,14 +1,12 @@
 package io.cscode.support.util;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 import java.io.BufferedWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class GenerateLargeDataset {
@@ -44,8 +42,6 @@ public class GenerateLargeDataset {
 
     }
 
-
-
     @AllArgsConstructor
     private static class Employee {
         private long id;
@@ -62,7 +58,7 @@ public class GenerateLargeDataset {
                     .concat(title).concat(COMMA)
                     .concat(department).concat(COMMA)
                     .concat(String.valueOf(tenure)).concat(COMMA)
-                    .concat(String.join(COMMA, skillSet));
+                    .concat(String.join(COMMA, skillSet)).concat(System.lineSeparator());
         }
     }
 }

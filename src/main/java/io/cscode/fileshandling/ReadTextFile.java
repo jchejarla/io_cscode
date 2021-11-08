@@ -2,19 +2,16 @@ package io.cscode.fileshandling;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
 public class ReadTextFile {
 
-    private static final String PATH_TO_FILE = "/Users/jc/Documents/cscode-files/sample.txt";
-
-    public String readFileUsingFilesClass() {
+    public String readFileUsingFilesClass(String fullyQualifiedPath) {
         try {
             StringBuilder sb = new StringBuilder();
-            Stream<String> stream = Files.lines(Path.of(PATH_TO_FILE));
+            Stream<String> stream = Files.lines(Path.of(fullyQualifiedPath));
             stream.forEach(line -> sb.append(line));
             return sb.toString();
         } catch (Exception e) {
@@ -22,8 +19,8 @@ public class ReadTextFile {
         }
     }
 
-    public String readFileUsingFileReader() {
-        try(FileReader fileReader = new FileReader(PATH_TO_FILE)) {
+    public String readFileUsingFileReader(String fullyQualifiedPath) {
+        try(FileReader fileReader = new FileReader(fullyQualifiedPath)) {
             StringBuilder sb = new StringBuilder();
             char[] text = new char[1024];
             int count;
@@ -36,8 +33,8 @@ public class ReadTextFile {
         }
     }
 
-    public String readFileUsingBufferedReader() {
-        try(BufferedReader br = Files.newBufferedReader(Path.of(PATH_TO_FILE))){
+    public String readFileUsingBufferedReader(String fullyQualifiedPath) {
+        try(BufferedReader br = Files.newBufferedReader(Path.of(fullyQualifiedPath))){
             StringBuilder sb = new StringBuilder();
             String line;
             while((line = br.readLine()) != null) {
