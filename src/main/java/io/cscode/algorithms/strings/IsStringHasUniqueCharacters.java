@@ -31,7 +31,8 @@ public class IsStringHasUniqueCharacters {
             return true;
         }
         Set<Character> visited = new HashSet<>();
-        for(char c : input.toCharArray()) {
+        for(int i=0; i<input.length(); i++) {
+            char c = input.charAt(i);
             boolean duplicateFound = visited.contains(c);
             if(duplicateFound) {
                 return false;
@@ -54,7 +55,8 @@ public class IsStringHasUniqueCharacters {
             return true;
         }
         int[] visited = new int[128];
-        for(char c: input.toCharArray()) {
+        for(int i=0; i<input.length(); i++) {
+            char c = input.charAt(i);
             if(visited[c] != 0) { // this means the same character has already been visited
                 return false;
             }
