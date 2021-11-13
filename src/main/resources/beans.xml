@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="tom" class="io.cscode.spring.beans.xmlbased.Person" init-method="customInit" destroy-method="customDestroy">
+        <property name="firstName" value="Tom"/>
+        <property name="lastName" value="Cruise"/>
+    </bean>
+    <bean id="chris" class="io.cscode.spring.beans.xmlbased.Person">
+        <property name="firstName" value="Chris"/>
+        <property name="lastName" value="Gayle"/>
+    </bean>
+
+
+</beans>
