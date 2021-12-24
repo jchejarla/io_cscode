@@ -82,7 +82,7 @@ public class ProcessingLargeFiles {
             FileChannel fileChannel = fileInputStream.getChannel();
             ByteBuffer byteBuffer = ByteBuffer.allocate(8 * 1024);
             while(fileChannel.read(byteBuffer) != -1) {
-                String str = new String(byteBuffer.array());
+                String str = new String(byteBuffer.array(), 0, byteBuffer.position());
                 System.out.println(str);
                 byteBuffer.clear();
             }
@@ -104,7 +104,7 @@ public class ProcessingLargeFiles {
             FileChannel fileChannel = randomAccessFile.getChannel();
             ByteBuffer byteBuffer = ByteBuffer.allocate(8 * 1024);
             while(fileChannel.read(byteBuffer) != -1) {
-                String str = new String(byteBuffer.array());
+                String str = new String(byteBuffer.array(), 0, byteBuffer.position());
                 System.out.println(str);
                 byteBuffer.clear();
             }
