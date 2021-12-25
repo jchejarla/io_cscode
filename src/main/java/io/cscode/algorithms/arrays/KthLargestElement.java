@@ -44,12 +44,9 @@ public class KthLargestElement {
     }
 
     public int partition(int[] nums, int left, int right) {
-        int pivotIndex = (left+right+1/*1 to get the length as index starts from 0*/)/2;
-        int pivotValue = nums[pivotIndex];
-        // first thing is move pivot element to the right
-        swap(nums, pivotIndex, right);
+        int pivotValue = nums[right];
         int storeIndex = left;
-        for(int i=left; i<right-1; i++) {
+        for(int i=left; i<right; i++) {
             if(nums[i]<pivotValue) {
                 swap(nums, i, storeIndex);
                 storeIndex++;

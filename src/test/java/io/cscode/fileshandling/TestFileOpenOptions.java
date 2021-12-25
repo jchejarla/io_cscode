@@ -25,9 +25,13 @@ public class TestFileOpenOptions extends UnitTestBase {
     public void testRead() throws Exception {
         // for unit tests running lets make sure file has only the expected text.
         // just in case if the original text has been appended by other methods.
+        Files.deleteIfExists(Path.of(PATH_TO_FILE));
+        Files.createFile(Path.of(PATH_TO_FILE));
+
         fileOpenOptions.write(PATH_TO_FILE, CONTENT);
 
         String text = fileOpenOptions.read(PATH_TO_FILE);
+        System.out.println(text);
         assertEquals(CONTENT, text);
     }
 

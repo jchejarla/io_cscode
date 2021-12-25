@@ -40,14 +40,19 @@ public class TestKthLargestElement extends UnitTestBase {
 
     @Test
     public void testFindKthLargestQuickSelect() {
-        int[] input_1 = {3, 2, 1, 5, 6, 4};
-        int k_1 = 2;
-        int kthLargest_1 = kthLargestElement.kthLargestUsingQuickSelect(input_1, k_1);
-        assertEquals(5 , kthLargest_1);
+        int[] input = {3, 2, 1, 5, 6, 4};
+        int k = 2;
+        int kthLargest = kthLargestElement.kthLargestUsingQuickSelect(input, k);
+        assertEquals(5 , kthLargest);
 
-        int[] input_2 = {3, 2, 3, 1, 2, 4, 5, 5, 6};
-        int k_2 = 4;
-        int kthLargest_2 = kthLargestElement.kthLargestUsingQuickSelect(input_2, k_2);
-        assertEquals(4 , kthLargest_2);
+        input = new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6};
+        k = 4;
+        kthLargest = kthLargestElement.kthLargestUsingQuickSelect(input, k);
+        assertEquals(4 , kthLargest);
+
+        input = new int[]{3, 2, 1, 9, 8, 5, 6};
+        k = 2;
+        kthLargest = kthLargestElement.kthLargestUsingQuickSelect(input, k);
+        assertEquals(8 , kthLargest);
     }
 }

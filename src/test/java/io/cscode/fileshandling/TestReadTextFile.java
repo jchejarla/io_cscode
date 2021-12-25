@@ -1,9 +1,13 @@
 package io.cscode.fileshandling;
 
 import io.cscode.base.UnitTestBase;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Answers;
 import org.mockito.Mock;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,6 +17,11 @@ public class TestReadTextFile extends UnitTestBase {
 
     @Mock(answer = Answers.CALLS_REAL_METHODS)
     ReadTextFile readTextFile;
+
+    @Before
+    public void createFileIfNotExists() throws Exception{
+        Files.writeString(Path.of(PATH_TO_FILE),"Hello, it's a great day today!");
+    }
 
     @Test
     public void testReadFileUsingFilesClass() {
