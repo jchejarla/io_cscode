@@ -2,12 +2,11 @@ package io.cscode.algorithms.sorting;
 
 public class QuicksortLomutoPartition {
 
-    public int[] sortArray(int[] nums) {
+    public void sortArray(int[] nums) {
         if(nums == null || nums.length==0 ||nums.length==1) {
-            return nums;
+            return;
         }
         quickSort(nums,0,nums.length-1);
-        return nums;
     }
 
     private void quickSort(int nums[], int left, int right) {
