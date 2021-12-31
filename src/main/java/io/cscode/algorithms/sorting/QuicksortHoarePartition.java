@@ -1,7 +1,5 @@
 package io.cscode.algorithms.sorting;
 
-import java.util.Arrays;
-
 public class QuicksortHoarePartition {
 
     public void sortArray(int[] nums) {
