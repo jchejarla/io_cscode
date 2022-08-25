@@ -42,7 +42,7 @@ public class TestMergeTwoSortedListsRemoveDuplicates extends UnitTestBase {
         list2.next = new ListNode(3);
         list2.next.next = new ListNode(4);
 
-        ListNode result = mergeTwoSortedListsRemoveDuplicates.removeDuplicatesWhileMergiing(list1, list2);
+        ListNode result = mergeTwoSortedListsRemoveDuplicates.removeDuplicatesWhileMerging(list1, list2);
         ListNode expected = new ListNode(1);
         expected.next = new ListNode(2);
         expected.next.next = new ListNode(3);

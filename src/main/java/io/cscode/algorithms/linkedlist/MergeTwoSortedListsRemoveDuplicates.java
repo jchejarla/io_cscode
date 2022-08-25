@@ -34,7 +34,7 @@ public class MergeTwoSortedListsRemoveDuplicates {
     }
 
     public void removeDuplicates(ListNode linkedList) {
-        ListNode current = linkedList;
+        ListNode current = linkedList; // pointer to current head
         while(current.next != null) {
             if(current.element == current.next.element) {
                 current.next = current.next.next;
@@ -70,9 +70,9 @@ public class MergeTwoSortedListsRemoveDuplicates {
         return result.next;
     }
 
-    public ListNode removeDuplicatesWhileMergiing(ListNode list1, ListNode list2) {
+    public ListNode removeDuplicatesWhileMerging(ListNode list1, ListNode list2) {
 
-        ListNode result = new ListNode(0);
+        ListNode result = new ListNode(0);// create a new ListNode with a dummy head
         ListNode temp = result;
         int counter=0;
 
@@ -112,7 +112,7 @@ public class MergeTwoSortedListsRemoveDuplicates {
 
         ListNode result = new MergeTwoSortedListsRemoveDuplicates().mergeAndRemoveDuplicates(list1, list2);
         System.out.println(result);
-        ListNode result1 = new MergeTwoSortedListsRemoveDuplicates().removeDuplicatesWhileMergiing(list1, list2);
+        ListNode result1 = new MergeTwoSortedListsRemoveDuplicates().removeDuplicatesWhileMerging(list1, list2);
         System.out.println(result1);
     }
 }
