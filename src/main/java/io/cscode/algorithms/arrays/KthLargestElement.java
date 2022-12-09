@@ -10,16 +10,22 @@ public class KthLargestElement {
         return input[input.length-k];
     }
 
-
+    /**
+     * Kth largest element using Min Heap
+     *
+     * @param input
+     * @param k
+     * @return
+     */
     public int findKthLargestUsingMinHeap(int[] input, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>(k);
         for(int num : input) {
             minHeap.add(num);
-            if(minHeap.size() > k) {
-                minHeap.poll();
+            if(minHeap.size() > k) { // check when min heap has K+1 th element
+                minHeap.poll(); // remove the top element to ensure it has only K elements
             }
         }
-        return minHeap.peek();
+        return minHeap.peek(); // finally return top element, which is nothing but Kth largest
     }
 
     public int kthLargestUsingQuickSelect(int[] nums, int k) {
