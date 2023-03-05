@@ -44,11 +44,11 @@ public class MedianOfTwoSortedArraysOfSameSize {
         return (double) (m1+m2)/2;
     }
 
-    public static double median (int[] nums1, int[] nums2) {
+    public static double median_Using_Binary_Search(int[] nums1, int[] nums2) {
         if(nums1.length == 0) { // base case if input arrays have only one element
             return (double) (nums1[0] + nums2[0])/2;
         }
-        return median_Using_Binary_Search(nums1,nums2, 0, nums1.length-1, 0, nums2.length-1);
+        return median_Using_Binary_Search_Recursive(nums1,nums2, 0, nums1.length-1, 0, nums2.length-1);
     }
 
     public static double getMedian(int[] input, int start, int end) {
@@ -71,7 +71,7 @@ public class MedianOfTwoSortedArraysOfSameSize {
      * @param endB - end index of nums2 array
      * @return
      */
-    public static double median_Using_Binary_Search(int[] nums1, int[] nums2, int startA, int endA, int startB, int endB) {
+    public static double median_Using_Binary_Search_Recursive(int[] nums1, int[] nums2, int startA, int endA, int startB, int endB) {
 
         if (endA - startA == 1 && endB - startB == 1) { // If the nums1 array has only two elements
                                 // nums2 size is also same as nums1, per problem statement
@@ -94,9 +94,9 @@ public class MedianOfTwoSortedArraysOfSameSize {
         // and startB and m2 of nums2 [...startB....m2...]
 
         if(m1<m2) {
-            return median_Using_Binary_Search(nums1, nums2, startA+(mid), endA, startB, endB - (mid));
+            return median_Using_Binary_Search_Recursive(nums1, nums2, startA+(mid), endA, startB, endB - (mid));
         } else {
-            return median_Using_Binary_Search(nums1, nums2, startA, endA-mid,  startB+mid, endB);
+            return median_Using_Binary_Search_Recursive(nums1, nums2, startA, endA-mid,  startB+mid, endB);
         }
 
     }
@@ -105,34 +105,34 @@ public class MedianOfTwoSortedArraysOfSameSize {
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 3, 6 }; //2.5
         int[] nums2 = {4, 6, 8, 10}; // 7
-        double median = median(nums2,nums1);
+        double median = median_Using_Binary_Search(nums2,nums1);
         System.out.println(median);
 
         nums1 = new int[]{1, 2, 5, 11, 15};
         nums2 = new int[]{3, 4, 13, 17, 18};
-        median = median(nums1,nums2);
+        median = median_Using_Binary_Search(nums1,nums2);
         System.out.println(median);
 
         nums1 = new int[]{1, 2, 11, 15}; //6.5 -- 1 ,2, 3 ,4, 9, 10, 11, 15
         nums2 = new int[]{3, 4, 9, 10}; //6.5
-        median = median(nums1,nums2);
+        median = median_Using_Binary_Search(nums1,nums2);
         System.out.println(median);
 
 
         nums1 = new int[]{1, 1, 1, 1 ,1};
         nums2 = new int[] {4, 6, 8, 10,12};
-        median = median(nums1,nums2);
+        median = median_Using_Binary_Search(nums1,nums2);
         System.out.println(median);
-        median = median(nums2,nums1);
+        median = median_Using_Binary_Search(nums2,nums1);
         System.out.println(median);
-        median = median(nums1,nums1);
+        median = median_Using_Binary_Search(nums1,nums1);
         System.out.println(median);
-        median = median(nums2,nums2);
+        median = median_Using_Binary_Search(nums2,nums2);
         System.out.println(median);
 
         nums1 = new int[]{1, 3, 5};
         nums2 = new int[]{2, 3, 7};
-        median = median(nums1,nums2);
+        median = median_Using_Binary_Search(nums1,nums2);
         System.out.println(median);
 
 
