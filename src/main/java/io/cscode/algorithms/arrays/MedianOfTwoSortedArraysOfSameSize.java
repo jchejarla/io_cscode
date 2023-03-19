@@ -135,6 +135,8 @@ public class MedianOfTwoSortedArraysOfSameSize {
         median = median_Using_Binary_Search(nums1,nums2);
         System.out.println(median);
 
+        median = median_While_Merging(new int[]{1},new int[]{2},1);
+        System.out.println(median);
 
     }
 }
