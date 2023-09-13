@@ -4,6 +4,7 @@ import java.util.List;
 
 public class TriangleMinPathSum {
 
+    /* brute-force depth first search using recursion */
     static int minimumTotal(List<List<Integer>> triangle) {
        return minimumTotalBruteforce(triangle, 0, 0);
     }
@@ -18,6 +19,7 @@ public class TriangleMinPathSum {
                 currentNumber + minimumTotalBruteforce(triangle, row +1, column+1));
     }
 
+    /* using dynamic programming and memoization */
     static int minimumTotalDp(List<List<Integer>> triangle) {
         int[] temp = new int[triangle.get(triangle.size()-1).size()+1];
         for(int i= triangle.size() -1; i>=0; i--) { // start from last row bottom-up
