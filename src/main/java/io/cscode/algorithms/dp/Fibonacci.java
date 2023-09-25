@@ -4,6 +4,14 @@ import java.util.HashMap;
 
 public class Fibonacci {
 
+    /* brute-force approach*/
+    static int fibFunctionUsingBruteForceApproach(int n) {
+        if(n==0 || n==1) {
+            return 1;
+        }
+        return fibFunctionUsingBruteForceApproach(n-1) + fibFunctionUsingBruteForceApproach(n-2);
+    }
+
 
     /* Fibonacci using memoization technique */
     static int fibUsingMemoization(int n) {
@@ -48,6 +56,7 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
+        System.out.println(fibFunctionUsingBruteForceApproach(5));
         System.out.println(fibUsingMemoization(5));
         System.out.println(fibonacciUsingTabulation(5));
         System.out.println(fibonacciOptimized(5));
