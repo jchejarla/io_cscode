@@ -24,7 +24,6 @@ public class PascalsTriangle {
             }
             currentRow.add(1);
             result.add(currentRow);
-            System.out.println(result);
         }
         return result;
     }
