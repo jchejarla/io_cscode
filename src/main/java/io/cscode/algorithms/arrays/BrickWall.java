@@ -5,6 +5,7 @@ import java.util.List;
 
 public class BrickWall {
 
+    /* brute force approach */
     static int bruteForceApproach(List<List<Integer>> wall) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -48,6 +49,8 @@ public class BrickWall {
         return min;
     }
 
+    /* count gaps in each row first, and then find the maximum gaps found for any position,
+        then subtract it from wall height to get the minimum cuts needed */
     static int countGapsAndFindMaxGaps(List<List<Integer>> wall) {
         final HashMap<Integer, Integer> gaps = new HashMap<>();
 
