@@ -1,11 +1,9 @@
 package io.cscode.algorithms.arrays;
 
-import java.util.Arrays;
-
 public class RangeSumQuery2DImmutable {
 
 
-    private final int[][] arr;
+    private final int[][] prefixSumArray;
 
 
     /**
@@ -13,20 +11,20 @@ public class RangeSumQuery2DImmutable {
      */
     public RangeSumQuery2DImmutable(int[][] matrix) {
         if(matrix.length == 0 || matrix[0].length == 0) {
-            arr = null;
+            prefixSumArray = null;
             return;
         }
         int m = matrix.length;
         int n = matrix[0].length;
-        arr = new int[m+1][n+1]; // additional row and column with 0's
+        prefixSumArray = new int[m+1][n+1]; // additional row and column with 0's
 
         for(int i=1; i<=m; i++) {
             for(int j=1; j<=n; j++) {
-                arr[i][j] = matrix[i-1][j-1] // current element
-                        + arr[i-1][j] // row above, same column
-                        + arr[i][j-1] // column to left, same row
-                        - arr[i-1][j-1]; // diagonal element in arr,
-                                        // since it was double counted in row sum and column sum
+                prefixSumArray[i][j] = matrix[i-1][j-1] // current element from input array
+                        + prefixSumArray[i-1][j] // row above, same column
+                        + prefixSumArray[i][j-1] // column to left, same row
+                        - prefixSumArray[i-1][j-1]; // diagonal element in prefixSumArray,
+                                                // since it was double counted in row sum and column sum
             }
         }
        /* for(int[] nums: arr) {
@@ -35,13 +33,13 @@ public class RangeSumQuery2DImmutable {
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
-        if(arr == null) {
+        if(prefixSumArray == null) {
             return 0;
         }
-        int row2Col2Corner = arr[row2 + 1][col2 + 1]; // +1 is because arr has additional row and column
-        int aboveRowCol2 = arr[row1][col2 + 1];
-        int previousCol1Row2 = arr[row2+1][col1];
-        int diagonalRowColumn = arr[row1][col1];
+        int row2Col2Corner = prefixSumArray[row2 + 1][col2 + 1]; // +1 is because arr has additional row and column
+        int aboveRowCol2 = prefixSumArray[row1][col2 + 1];
+        int previousCol1Row2 = prefixSumArray[row2+1][col1];
+        int diagonalRowColumn = prefixSumArray[row1][col1];
         return row2Col2Corner - (aboveRowCol2 + previousCol1Row2)  + diagonalRowColumn ;
     }
 
