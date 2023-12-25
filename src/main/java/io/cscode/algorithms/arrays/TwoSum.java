@@ -1,11 +1,12 @@
 package io.cscode.algorithms.arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
 
-    public int[] twoSum(int[] array, int target) {
+    static int[] twoSum(int[] array, int target) {
         // base case to find a pair we need atleast two elements.
         if(array == null || array.length < 2) {
             throw new IllegalArgumentException("input array should contain atleast two elements");
@@ -23,6 +24,10 @@ public class TwoSum {
             }
         }
         return null; // none found
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(twoSum(new int[] {2,7,11,15}, 9)));
     }
 
 }
