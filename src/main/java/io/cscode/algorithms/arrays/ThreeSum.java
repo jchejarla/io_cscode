@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ThreeSum {
 
-    public List<List<Integer>> threeSum_Using_2Sum(int[] nums) {
+    static List<List<Integer>> threeSum_Using_2Sum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Set<List<Integer>> duplicates = new HashSet<>();
         for(int i=0; i<nums.length; i++) {
@@ -23,7 +23,7 @@ public class ThreeSum {
         return result;
     }
 
-    public List<List<Integer>> threeSum_Using_Sorting_And_2Sum(int[] nums) {
+    static List<List<Integer>> threeSum_Using_Sorting_And_2Sum(int[] nums) {
         Arrays.sort(nums);// n (log n)
         List<List<Integer>> result = new ArrayList<>();
 
@@ -58,9 +58,9 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
-        System.out.println(new ThreeSum().threeSum_Using_2Sum(new int[]{-1, 0, 1, 2, -1, -4}));
-        System.out.println(new ThreeSum().threeSum_Using_Sorting_And_2Sum(new int[]{-1, 0, 1, 2, -1, -4}));
-        System.out.println(new ThreeSum().threeSum_Using_Sorting_And_2Sum(new int[]{2,2,0,-2}));
+        System.out.println(threeSum_Using_2Sum(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println(threeSum_Using_Sorting_And_2Sum(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println(threeSum_Using_Sorting_And_2Sum(new int[]{2,2,0,-2}));
 
     }
 }
