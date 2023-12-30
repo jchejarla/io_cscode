@@ -42,13 +42,10 @@ public class ThreeSum {
                         result.add(List.of(nums[i], nums[low], nums[high]));
                         //let's continue, as there could be other triplets with i as one element.
                         //while doing this lets avoid duplicates
-                        while(low<high && nums[low] == nums[low+1]) {
+                        low++;
+                        while(low<high && nums[low] == nums[low-1]) {
                             low++;
                         }
-                        while(low<high && nums[high] == nums[high-1]) {
-                            high--;
-                        }
-                        low++;
                     } else if (nums[low]+nums[high] <twoSum) {
                         low++;
                     } else {
