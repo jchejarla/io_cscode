@@ -28,7 +28,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     static int lengthOfLongestSubstring_Using_Array_ASCII(String s) {
 
-        // This is same as above, we are replacing HashMap with int[] array, assuming characters are ascii
+        // This is same as above, we are replacing HashSet with int[] array, assuming characters are ascii
         int[] dups = new int[128];
         int left = 0;
         int right = 0;
