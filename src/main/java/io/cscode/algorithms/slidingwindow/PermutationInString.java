@@ -70,7 +70,8 @@ public class PermutationInString {
         while(right < s2.length()) {
             s2_count[s2.charAt(right)-'a']++;
             /*
-               When s2_count reaches exceeds sliding window size, then remove left most (>= because indexes starts with 0)
+               When s2_count reaches exceeds sliding window size, then remove left most
+               (>= because indexes starts with 0)
              */
             if(right >= s1.length()) {
                 s2_count[s2.charAt(left)-'a']--;
