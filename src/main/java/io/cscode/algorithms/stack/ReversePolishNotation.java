@@ -5,29 +5,29 @@ import java.util.Stack;
 public class ReversePolishNotation {
 
     static int evalRPN(String[] tokens) {
-        Stack<String> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         for(String token: tokens) {
             if("+".equals(token)) {
-                int x1 = Integer.parseInt(stack.pop());
-                int x2 = Integer.parseInt(stack.pop());
-                stack.push((x2+x1)+"");
+                int x1 = stack.pop();
+                int x2 = stack.pop();
+                stack.push(x2+x1);
             } else if("-".equals(token)) {
-                int x1 = Integer.parseInt(stack.pop());
-                int x2 = Integer.parseInt(stack.pop());
-                stack.push((x2-x1)+"");
+                int x1 = stack.pop();
+                int x2 = stack.pop();
+                stack.push(x2-x1);
             } else if("*".equals(token)) {
-                int x1 = Integer.parseInt(stack.pop());
-                int x2 = Integer.parseInt(stack.pop());
-                stack.push((x2*x1)+"");
+                int x1 = stack.pop();
+                int x2 = stack.pop();
+                stack.push(x2*x1);
             } else if("/".equals(token)) {
-                int x1 = Integer.parseInt(stack.pop());
-                int x2 = Integer.parseInt(stack.pop());
-                stack.push((x2/x1)+"");
+                int x1 = stack.pop();
+                int x2 = stack.pop();
+                stack.push(x2/x1);
             } else {
-                stack.push(token);
+                stack.push(Integer.parseInt(token));
             }
         }
-        return Integer.parseInt(stack.pop());
+        return stack.pop();
     }
 
     public static void main(String[] args) {
