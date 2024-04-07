@@ -33,7 +33,6 @@ public class CarFleet {
         for(int i=0; i<position.length; i++) {
             time[position[i]] = (double)(target - position[i])/ speed[i];
         }
-        System.out.println(Arrays.toString(time));
         int result = 0;
         double prev = 0.0;
         for(int i=time.length-1; i>=0; i--) {
