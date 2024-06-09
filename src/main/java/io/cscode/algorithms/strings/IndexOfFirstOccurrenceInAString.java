@@ -11,7 +11,7 @@ public class IndexOfFirstOccurrenceInAString {
      * @param needle
      * @return
      */
-    static int usingTwopointers(String haystack, String needle) {
+    static int usingTwoPointers(String haystack, String needle) {
 
         int i =0;
         while(i < haystack.length() && i+needle.length() <= haystack.length()) {
@@ -91,12 +91,14 @@ public class IndexOfFirstOccurrenceInAString {
     public static void main(String[] args) {
 
         System.out.println("############### Using Two pointers ######################");
-        System.out.println(usingTwopointers("sadbutsad", "sad"));
-        System.out.println(usingTwopointers("cscodeio", "cscd"));
-        System.out.println(usingTwopointers("mississippi", "issipi"));
-        System.out.println(usingTwopointers("abcabcyabcxabcyabczadbca", "abcyabcz"));
+        System.out.println(patternMatchingUsingKMP("aaaaaaaaaaaabaacaazbbz", "aazbbz"));
+        System.out.println(usingTwoPointers("sadbutsad", "sad"));
+        System.out.println(usingTwoPointers("cscodeio", "cscd"));
+        System.out.println(usingTwoPointers("mississippi", "issipi"));
+        System.out.println(usingTwoPointers("abcabcyabcxabcyabczadbca", "abcyabcz"));
 
         System.out.println("############### Using KMP pattern matching ######################");
+        System.out.println(patternMatchingUsingKMP("aaaaaaaaaaaabaacaazbbz", "aazbbz"));
         System.out.println(patternMatchingUsingKMP("sadbutsad", "sad"));
         System.out.println(patternMatchingUsingKMP("cscodeio", "cscd"));
         System.out.println(patternMatchingUsingKMP("mississippi", "issipi"));
