@@ -7,7 +7,7 @@ public class ValidPerfectSquare {
         int right = num;
         while(left <= right) {
             int mid = left + (right - left) /2;
-            int sqrt = mid * mid;
+            long sqrt = (long)mid * mid;
             if (sqrt == num) {
                 return true;
             } else if (sqrt > num) {
@@ -22,5 +22,6 @@ public class ValidPerfectSquare {
     public static void main(String[] args) {
         System.out.println(isPerfectSquare(16));
         System.out.println(isPerfectSquare(14));
+        System.out.println(isPerfectSquare(2147483647));
     }
 }
