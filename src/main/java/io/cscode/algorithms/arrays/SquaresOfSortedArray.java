@@ -1,4 +1,4 @@
-package io.cscode.algorithms.binarysearch;
+package io.cscode.algorithms.arrays;
 
 import java.util.Arrays;
 
