@@ -30,7 +30,7 @@ public class RemoveKDigits {
         for(int i=nonZeroLeadingIndex; i<stack.size();i++) {
             sb.append(stack.get(i));
         }
-        return sb.isEmpty() ? "0" : sb.toString();
+        return sb.length() ==0 ? "0" : sb.toString();
     }
 
     public static void main(String[] args) {
